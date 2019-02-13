@@ -1,0 +1,38 @@
+/* pages/tags/info/info.wxss */
+/* 页面大容器 */
+.whole{
+  height: 100vh;
+  width: 100vw;
+}
+
+/* 搜索栏容器 */
+.search{
+  height: 10vh;
+  width: 100vw;
+}
+
+/* 标签栏容器 */
+.tag{
+  height: 7vh;
+  width: 100vw;
+  background: green
+}
+
+.object{
+  height: 20vh;
+  width: 100vw;
+  background: yellow
+}
+
+/* 按钮样式 */
+.choice{
+  height: 10vh;
+  width: 30vw;
+  margin-left: 0rpx;
+  font-size: 50rpx;
+  background-color: "dddddd";
+  color: black;
+}
+.choice::after{
+  border: none;
+}

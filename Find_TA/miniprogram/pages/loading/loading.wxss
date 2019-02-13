@@ -1,0 +1,40 @@
+/* startpage.wxss */
+
+/* 整体元素 */
+
+.element {
+  position: fixed;
+  top: 200rpx;
+}
+
+/* 图片 */
+
+.image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  margin-left: 275rpx;
+  overflow: hidden;
+}
+
+/* 文字 */
+
+.word {
+  height: 500rpx;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  margin-left: 80rpx;
+}
+
+/* 背景 */
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background: url('');
+}

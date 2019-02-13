@@ -1,0 +1,12 @@
+<!--pages/tags/info/info.wxml-->
+<view class="whole">
+  <view class="search">
+    <button class="choice" bindtap="choice" plain='{{plain}}' style="border:0rpx;">{{choice}}</button>
+  </view>
+  <view class="tag">
+
+  </view>
+  <view class="object">
+
+  </view>
+</view>
