@@ -1,38 +1,100 @@
 /* pages/tags/info/info.wxss */
+
 /* 页面大容器 */
-.whole{
+
+.whole {
   height: 100vh;
   width: 100vw;
 }
 
 /* 搜索栏容器 */
-.search{
+
+.search {
   height: 10vh;
   width: 100vw;
+  display: flex;
+  flex-direction: row;
 }
 
 /* 标签栏容器 */
-.tag{
+
+.tag {
   height: 7vh;
   width: 100vw;
-  background: green
+  background: green;
 }
 
-.object{
+/* 物品容器 */
+
+.object {
   height: 20vh;
   width: 100vw;
-  background: yellow
+  background: yellow;
 }
 
 /* 按钮样式 */
-.choice{
+
+.choice {
   height: 10vh;
   width: 30vw;
-  margin-left: 0rpx;
-  font-size: 50rpx;
-  background-color: "dddddd";
+  font-size: 40rpx;
+  background-color: white;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  border-color: transparent;
+  border-width: 0rpx;
 }
-.choice::after{
-  border: none;
+.choich::after{
+  border: 0rpx;
+}
+
+/* 搜索栏样式 */
+.searchview {
+  width: 50vw;
+  height: 10vh;
+}
+
+.searchline{
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.searchicon{
+  margin-top: 3vh;
+}
+
+.searchinput{
+  margin-top: 2vh;
+  margin-left: 20rpx;
+  border: lightgrey; 
+  border-style: solid; 
+  border-width: 1px; 
+  font-size: 14px; 
+  border-bottom-left-radius: 5px; 
+  border-top-left-radius: 5px; 
+  height: 6vh;
+  width: 47vw;
+}
+
+.searchbutton{
+  height: 6vh;
+  width: 12vw;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:2vh;
+  border-width: 1rpx;
+  border: "ffffff";
+  border-style: solid;
+  border-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  font-family: "微软雅黑";
 }

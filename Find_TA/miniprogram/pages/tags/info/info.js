@@ -6,7 +6,8 @@ Page({
    */
   data: {
     choice: "找失主",
-    plain: false
+    plain: false,
+    searchValue: ""
   },
 
   /**
