@@ -36,6 +36,10 @@
   width: 100vw;
   background: yellow;
   border-bottom: 1rpx solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 按钮样式 */
@@ -105,4 +109,37 @@
   height: 4vh;
   font-size: 25rpx;
   background-color: lightblue;
+}
+
+/* 物品图片 */
+
+.image {
+  height: 16vh;
+  width: 16vh;
+  border-radius: 50%;
+  margin-left: 3vw;
+}
+
+/* 物品详情 */
+
+.text {
+  display: flex;
+  flex-direction: column;
+  height: 16vh;
+  width: 70vw;
+  margin-left: 10vw;
+  justify-content: space-evenly;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.time{
+  font-size: 25rpx;
+  color: grey;
+  position: fixed;
+  right: 2vw;
 }
