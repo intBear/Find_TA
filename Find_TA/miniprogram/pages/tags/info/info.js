@@ -78,5 +78,26 @@ Page({
         plain: false
       })
     }
-  }
+  },
+
+  btn1: function () {
+
+  },
+
+  btn1: function () {
+
+  },
+
+  btn1: function () {
+
+  },
+
+  btn1: function () {
+
+  },
+
+  btn1: function () {
+
+  },
+  
 })

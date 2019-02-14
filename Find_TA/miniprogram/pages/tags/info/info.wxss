@@ -14,6 +14,7 @@
   width: 100vw;
   display: flex;
   flex-direction: row;
+  border-bottom: 1rpx solid black;
 }
 
 /* 标签栏容器 */
@@ -21,7 +22,11 @@
 .tag {
   height: 7vh;
   width: 100vw;
-  background: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid black;
 }
 
 /* 物品容器 */
@@ -30,13 +35,12 @@
   height: 20vh;
   width: 100vw;
   background: yellow;
+  border-bottom: 1rpx solid black;
 }
 
 /* 按钮样式 */
 
 .choice {
-  height: 10vh;
-  width: 30vw;
   font-size: 40rpx;
   background-color: white;
   color: black;
@@ -47,41 +51,38 @@
   border-color: transparent;
   border-width: 0rpx;
 }
-.choich::after{
+
+.choich::after {
   border: 0rpx;
 }
 
 /* 搜索栏样式 */
-.searchview {
-  width: 50vw;
-  height: 10vh;
-}
 
-.searchline{
+.searchline {
   width: 50vw;
   height: 10vh;
   display: flex;
   flex-direction: row;
 }
 
-.searchicon{
+.searchicon {
   margin-top: 3vh;
 }
 
-.searchinput{
+.searchinput {
   margin-top: 2vh;
   margin-left: 20rpx;
-  border: lightgrey; 
-  border-style: solid; 
-  border-width: 1px; 
-  font-size: 14px; 
-  border-bottom-left-radius: 5px; 
-  border-top-left-radius: 5px; 
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
   height: 6vh;
   width: 47vw;
 }
 
-.searchbutton{
+.searchbutton {
   height: 6vh;
   width: 12vw;
   font-size: 30rpx;
@@ -89,7 +90,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top:2vh;
+  margin-top: 2vh;
   border-width: 1rpx;
   border: "ffffff";
   border-style: solid;
@@ -97,4 +98,11 @@
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
   font-family: "微软雅黑";
+}
+
+.btn {
+  width: 15vw;
+  height: 4vh;
+  font-size: 25rpx;
+  background-color: lightblue;
 }

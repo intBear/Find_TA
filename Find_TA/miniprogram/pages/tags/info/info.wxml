@@ -2,16 +2,18 @@
 <view class="whole">
   <view class="search">
     <button class="choice" bindtap="choice" plain='{{plain}}' style="border:0rpx;">{{choice}}</button>
-    <view class="searchview">
-      <view class="searchline">
-        <icon class="searchicon" size='40rpx' type='search'></icon>
-        <input class="searchinput" disabled placeholder="请输入关键字" value="{{searchValue}}" />
-      </view>
+    <view class="searchline">
+      <icon class="searchicon" size='40rpx' type='search'></icon>
+      <input class="searchinput" disabled placeholder="请输入关键字" value="{{searchValue}}" />
     </view>
     <view class="searchbutton">搜索</view>
   </view>
   <view class="tag">
-
+    <button class="btn" bindtap="btn1">btn1</button>
+    <button class="btn" bindtap="btn2">btn2</button>
+    <button class="btn" bindtap="btn3">btn3</button>
+    <button class="btn" bindtap="btn4">btn4</button>
+    <button class="btn" bindtap="btn5">btn5</button>
   </view>
   <view class="object">
 
