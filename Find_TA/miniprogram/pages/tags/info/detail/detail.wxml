@@ -1,2 +1,11 @@
-<!--pages/tags/info/detail/detail.wxml-->
-<text>pages/tags/info/detail/detail.wxml</text>
+<view class="background">
+  <image class="image" src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4"></image>
+  <view class="text">
+    <text>物品名称：物品</text>
+    <view class="detail">
+      <text>物品详情：</text>
+      <view class="words">aldfjladsfajlsdnfahljkghielugeqnuirnviuehaireasdalgjoiabelndasgkdsjfaisulidfhegoigpqnxcnlwfhglanlkugnuaug</view>
+    </view>
+  </view>
+  <button class="contact" bindtap="contact" id="">联系TA</button>
+</view>
