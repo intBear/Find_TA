@@ -80,24 +80,34 @@ Page({
     }
   },
 
-  btn1: function () {
+  search: function(e){
+    
+  },
+
+  btn1: function (e) {
 
   },
 
-  btn1: function () {
+  btn2: function (e) {
 
   },
 
-  btn1: function () {
+  btn3: function (e) {
 
   },
 
-  btn1: function () {
+  btn4: function (e) {
 
   },
 
-  btn1: function () {
+  btn5: function (e) {
 
   },
+
+  input: function(v){
+    this.setData({
+      searchValue: v.detail.value
+    })
+  }
   
 })

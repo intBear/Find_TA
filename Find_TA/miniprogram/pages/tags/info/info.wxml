@@ -4,9 +4,9 @@
     <button class="choice" bindtap="choice" plain='{{plain}}' style="border:0rpx;">{{choice}}</button>
     <view class="searchline">
       <icon class="searchicon" size='40rpx' type='search'></icon>
-      <input class="searchinput" disabled placeholder="请输入关键字" value="{{searchValue}}" />
+      <input class="searchinput" placeholder="请输入关键字" bindblur='input' />
     </view>
-    <view class="searchbutton">搜索</view>
+    <view class="searchbutton" bindtap="search">搜索</view>
   </view>
   <view class="tag">
     <button class="btn" bindtap="btn1">btn1</button>
@@ -16,7 +16,7 @@
     <button class="btn" bindtap="btn5">btn5</button>
   </view>
   <!-- <block wx:for="" wx:key=''> -->
-  <navigator url='../info/detail/detail?id=' bindtap='detail' id='{{item._id}}'>
+  <navigator url='../info/detail/detail?id=' id='{{item._id}}'>
     <view class='object'>
       <image src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4" class="image"></image>
       <view class='text'>
