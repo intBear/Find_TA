@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="background">
+  <view class="userinfo">
+    <image class="avatar" src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4"></image>
+    <text>12345</text>
+  </view>
+  <view class="box">
+    <navigator url='./myrelease/myrelease'>
+      <view class="item item1">我发布的</view>
+    </navigator>
+    <navigator url='./myinfo/myinfo'>
+      <view class="item item2">我的资料</view>
+    </navigator>
+    <navigator url='./about/about'>
+      <view class="item item3">关于</view>
+    </navigator>
+  </view>
+  <view class="usermotto">
+    <image class="image" src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4" />
+  </view>
+</view>

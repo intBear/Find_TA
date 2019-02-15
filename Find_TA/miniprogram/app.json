@@ -2,7 +2,11 @@
   "pages": [
     "pages/loading/loading",
     "pages/tags/info/info",
-    "pages/tags/info/detail/detail"
+    "pages/tags/info/detail/detail",
+    "pages/tags/user/user",
+    "pages/tags/user/myrelease/myrelease",
+    "pages/tags/user/myinfo/myinfo",
+    "pages/tags/user/about/about"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
