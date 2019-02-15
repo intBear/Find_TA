@@ -1,0 +1,32 @@
+<!--pages/index/index.wxml-->
+<text>\n</text>
+<view class="box1">
+  <button>找失主</button>
+  <button>找失物</button>
+</view>
+<text>物品类别</text>
+<view class="box2">
+  <button size="mini">校园卡</button>
+  <button size="mini">身份证</button>
+  <button size="mini">钱包</button>
+  <button size="mini">学具</button>
+</view>
+<view class="box1">
+  <text>其他：</text>
+  <input value="请输入内容"></input>
+</view>
+<text>\n物品简介：</text>
+<textarea value="请输入内容"></textarea>
+
+<button class="button3" bindtap="chooseImage">上传照片</button>
+
+<view class="question-images">
+  <block wx:for="{{images}}" wx:key="*this">
+    <view class="q-image-wrap">
+      <!-- 图片缩略图  -->
+      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+    </view>
+  </block>
+</view>

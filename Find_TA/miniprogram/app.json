@@ -3,6 +3,7 @@
     "pages/loading/loading",
     "pages/tags/info/info",
     "pages/tags/info/detail/detail",
+    "pages/tags/release/release",
     "pages/tags/user/user",
     "pages/tags/user/myrelease/myrelease",
     "pages/tags/user/myinfo/myinfo",
