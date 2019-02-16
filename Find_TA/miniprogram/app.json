@@ -15,5 +15,32 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "blue",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/tags/info/info",
+        "iconPath": "pages/icon/info.jpg",
+        "selectedIconPath": "pages/icon/info.jpg",
+        "text": "信息"
+      },
+      {
+        "pagePath": "pages/tags/release/release",
+        "iconPath": "pages/icon/release.jpg",
+        "selectedIconPath": "pages/icon/release.jpg",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/tags/user/user",
+        "iconPath": "pages/icon/user.jpg",
+        "selectedIconPath": "pages/icon/user.jpg",
+        "text": "我的"
+      }
+    ]
   }
 }
