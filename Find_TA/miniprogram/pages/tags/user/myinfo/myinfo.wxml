@@ -27,6 +27,6 @@
   </view>
   <view class="tip">Tip: QQ 或者 手机 二者至少填写一项作为联系方式。</view>
   <view class="save">
-    <button class="btn">保存</button>
+    <button class="btn" bindtap="save">保存</button>
   </view>
 </view>

@@ -1,1 +1,45 @@
 /* pages/tags/user/myrelease/myrelease.wxss */
+
+.object {
+  height: 20vh;
+  width: 100vw;
+  border-bottom: 1rpx solid #ddd;
+  border-top: 1rpx solid #ddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 物品图片 */
+
+.image {
+  height: 16vh;
+  width: 16vh;
+  border-radius: 50%;
+  margin-left: 3vw;
+}
+
+/* 物品详情 */
+
+.text {
+  display: flex;
+  flex-direction: column;
+  height: 16vh;
+  width: 70vw;
+  margin-left: 10vw;
+  justify-content: space-evenly;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.time{
+  font-size: 25rpx;
+  color: grey;
+  position: fixed;
+  right: 2vw;
+}

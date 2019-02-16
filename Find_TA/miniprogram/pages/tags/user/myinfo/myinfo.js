@@ -4,96 +4,104 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:'',
-    school:'',
-    card:'',
-    qq:'',
-    phone:''
+    name: null,
+    school: null,
+    card: null,
+    qq: null,
+    phone: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    
+  onLoad: function(options) {
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-    
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-    
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-    
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function() {
+
   },
 
-  name: function (e) {
+  name: function(e) {
     this.setData({
       name: e.detail.value
     })
   },
 
-  school: function (e) {
+  school: function(e) {
     this.setData({
       school: e.detail.value
     })
   },
 
-  card: function (e) {
+  card: function(e) {
     this.setData({
       card: e.detail.value
     })
   },
 
-  qq: function (e) {
+  qq: function(e) {
     this.setData({
       qq: e.detail.value
     })
   },
 
-  phone: function (e) {
+  phone: function(e) {
     this.setData({
       phone: e.detail.value
     })
   },
+
+  save: function() {
+    if (this.data.qq != null || this.data.phone != null && this.data.name != null && this.data.school != null && this.data.card != null) {
+      wx.navigateBack({
+        delta: 1
+      })
+    }
+  }
 })

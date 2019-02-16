@@ -1,1 +1,14 @@
-<view>hello</view>
+<!-- <block wx:for="" wx:key=''> -->
+<navigator url='../../info/detail/detail?id=' id='{{item._id}}'>
+  <view class='object'>
+    <image src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4" class="image"></image>
+    <view class='text'>
+      <view class='title'>
+        <text style="font-size:50rpx">物品名称</text>
+        <text class='time'>2019-2-14</text>
+      </view>
+      <text style="font-size:25rpx">物品介绍</text>
+    </view>
+  </view>
+</navigator>
+<!-- </block> -->
