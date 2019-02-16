@@ -1,2 +1,10 @@
 <!--pages/tags/user/about/about.wxml-->
-<text>pages/tags/user/about/about.wxml</text>
+<view class="background">
+  <view class="about">
+    <view class="title">关于</view>
+    <view class="main">asdlakjga;lijg;idsjvaoijgwensjdhgauhdnsnaweuhdnvrejoiq;vzfngldhgfaldjndhl</view>
+  </view>
+  <view class="back">
+  <button class="btn" bindtap="back">返回</button>
+  </view>
+</view>
