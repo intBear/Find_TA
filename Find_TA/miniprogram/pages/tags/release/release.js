@@ -1,150 +1,174 @@
-// pages/index/index.js
-// import { promisify } from '../../utils/promise.util'
-// import { $init, $digest } from '../../utils/common.util'
-// import { createQuestion } from '../../services/question.service'
-// import config from '../../config'
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    titleCount: 0,
-    contentCount: 0,
-    title: '',
-    content: '',
-    images: []
+    plain: true,
+    items: [{
+        name: '校园卡',
+        value: '校园卡',
+        checked: true
+      },
+      {
+        name: '身份证',
+        value: '身份证'
+      },
+      {
+        name: '钱包',
+        value: '钱包'
+      },
+      {
+        name: '学具',
+        value: '学具'
+      },
+      {
+        name: '钥匙',
+        value: '钥匙'
+      },
+      {
+        name: '其他',
+        value: '其他'
+      },
+    ],
+    name: "",
+    detail: "",
+    height: '',
+    images: [{
+        image1: ''
+      },
+      {
+        image2: ''
+      },
+      {
+        image3: ''
+      },
+    ],
+    showView: [true, false, false],
   },
-  onload(options) {
-    $init(this)
-  },
-  chooseImage(e) {
-    wx.chooseImage({
-      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
-      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
-      success: res => {
-        const images = this.data.images.concat(res.tempFilePaths)
-        // 限制最多只能留下3张照片
-        this.data.images = images.length <= 9 ? images : images.slice(0, 9)
-        $digest(this)
-      }
-    })
-  },
-  removeImage(e) {
-    const idx = e.target.dataset.idx
-    this.data.images.splice(idx, 1)
-    $digest(this)
-  },
-  handleImagePreview(e) {
-    const idx = e.target.dataset.idx
-    const images = this.data.images
-    wx.previewImage({
-      current: images[idx],  //当前预览的图片
-      urls: images,  //所有要预览的图片
-    })
-  },
-  submitForm(e) {
-    const title = this.data.title
-    const content = this.data.content
-
-    if (title && content) {
-      const arr = []
-
-      for (let path of this.data.images) {
-        arr.push(wxUploadFile({
-          url: config.urls.question + '/image/upload',
-          filePath: path,
-          name: 'qimg',
-        }))
-      }
-
-      wx.showLoading({
-        title: '正在创建...',
-        mask: true
-      })
-
-      Promise.all(arr).then(res => {
-        return res.map(item => JSON.parse(item.data).url)
-      }).catch(err => {
-        console.log(">>>> upload images error:", err)
-      }).then(urls => {
-        return createQuestion({
-          title: title,
-          content: content,
-          images: urls
-        })
-      }).then(res => {
-        const pages = getCurrentPages();
-        const currPage = pages[pages.length - 1];
-        const prevPage = pages[pages.length - 2];
-
-        prevPage.data.questions.unshift(res)
-        $digest(prevPage)
-
-        wx.navigateBack()
-      }).catch(err => {
-        console.log(">>>> create question error:", err)
-      }).then(() => {
-        wx.hideLoading()
-      })
-    }
-  },
-
-
-
 
   /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function(options) {
 
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function() {
+    var that = this;
+    let id = "#textareawrap";
+    let query = wx.createSelectorQuery(); //创建查询对象
+    query.select(id).boundingClientRect(); //获取view的边界及位置信息
+    query.exec(function(res) {
+      that.setData({
+        height: res[0].height + "px"
+      });
+    });
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
+  },
+
+  person: function() {
+    if (this.data.plain == false) {
+      this.setData({
+        plain: !this.data.plain
+      })
+    }
+  },
+
+  thing: function() {
+    if (this.data.plain == true) {
+      this.setData({
+        plain: !this.data.plain
+      })
+    }
+  },
+
+  radioChange(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
+
+  name: function(e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+
+  detail: function(e) {
+    this.setData({
+      detail: e.detail.value
+    })
+    console.log(this.data.detail)
+  },
+
+  add1: function() {
+    if (this.data.images[0].image1 != '') {
+      this.setData({
+        showView: [false, true, false]
+      })
+    }
+  },
+
+  add2: function() {
+    if (this.data.images[1].image2 != '') {
+      this.setData({
+        showView: [false, false, true]
+      })
+    }
+  },
+
+  add3: function() {
+    if (this.data.images[2].image != '') {
+      this.setData({
+        showView: [false, false, false]
+      })
+    }
+  },
+
+  release: function(){
+    
   }
 })

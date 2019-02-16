@@ -1,32 +1,32 @@
 <!--pages/index/index.wxml-->
-<text>\n</text>
-<view class="box1">
-  <button>找失主</button>
-  <button>找失物</button>
-</view>
-<text>物品类别</text>
-<view class="box2">
-  <button size="mini">校园卡</button>
-  <button size="mini">身份证</button>
-  <button size="mini">钱包</button>
-  <button size="mini">学具</button>
-</view>
-<view class="box1">
-  <text>其他：</text>
-  <input value="请输入内容"></input>
-</view>
-<text>\n物品简介：</text>
-<textarea value="请输入内容"></textarea>
-
-<button class="button3" bindtap="chooseImage">上传照片</button>
-
-<view class="question-images">
-  <block wx:for="{{images}}" wx:key="*this">
-    <view class="q-image-wrap">
-      <!-- 图片缩略图  -->
-      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
-      <!-- 移除图片的按钮  -->
-      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+<view class="background">
+  <view class="box1">
+    <button class="choice" plain='{{!plain}}' bindtap="person">找失主</button>
+    <button class="choice" plain="{{plain}}" bindtap="thing">找失物</button>
+  </view>
+  <view class="title1">物品快速搜索标签</view>
+  <radio-group class="box2" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+    </label>
+  </radio-group>
+  <view class="name">
+    <view class="nameview">物品名称：</view>
+    <input class="nameinput" placeholder='请输入物品名称' bindblur='name'></input>
+  </view>
+  <view class="detail">
+    <view class="title2">物品详情描述：</view>
+    <view class="textareawrap" id="textareawrap">
+      <textarea bindblur="detail" style="height:{{height}}" placeholder='请详细描述物品的外貌特征、拾到地点。并请在下方附上实物图片。\n注：最多上传 3 张图片。' maxlength='-1' fixed="true"></textarea>
     </view>
-  </block>
+  </view>
+  <view class="box3">
+    <image class="image image1" src='{{images[0].image1}}'></image>
+    <image class="image image2" src='{{images[1].image2}}'></image>
+    <image class="image image3" src='{{images[2].image3}}'></image>
+    <button class="add add1 hide{{showView[0]?'show':''}}" bindtap="add1">+</button>
+    <button class="add add2 hide{{showView[1]?'show':''}}" bindtap="add2">+</button>
+    <button class="add add3 hide{{showView[2]?'show':''}}" bindtap="add3">+</button>
+  </view>
+  <button class="release" bindtap="release">发布</button>
 </view>
