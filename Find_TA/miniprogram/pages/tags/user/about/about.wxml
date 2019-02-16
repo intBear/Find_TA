@@ -5,6 +5,6 @@
     <view class="main">asdlakjga;lijg;idsjvaoijgwensjdhgauhdnsnaweuhdnvrejoiq;vzfngldhgfaldjndhl</view>
   </view>
   <view class="back">
-  <button class="btn" bindtap="back">返回</button>
+    <button class="btn" bindtap="back">返回</button>
   </view>
 </view>

@@ -131,13 +131,13 @@
   justify-content: space-evenly;
 }
 
-.title{
+.title {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.time{
+.time {
   font-size: 25rpx;
   color: grey;
   position: fixed;

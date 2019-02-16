@@ -10,13 +10,13 @@ Page({
     userList: [],
   },
 
-  onLoad: function (options) {
-    
+  onLoad: function(options) {
+
   },
 
-  onReady: function () {
+  onReady: function() {
     //自动跳转
-    setTimeout(function () {
+    setTimeout(function() {
       wx.redirectTo({
         url: '../tags/info/info'
       })

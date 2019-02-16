@@ -1,17 +1,17 @@
 /* pages/tags/info/detail/detail.wxss */
 
-.background{
+.background {
   height: 100vh;
   width: 100vw;
 }
 
-.image{
+.image {
   height: 60vw;
   width: 90vw;
   padding: 5vw;
 }
 
-.text{
+.text {
   height: 45vh;
   width: 100vw;
   display: flex;
@@ -19,20 +19,20 @@
   margin-left: 5vw;
 }
 
-.detail{
+.detail {
   display: flex;
   flex-direction: row;
   margin-top: 3vh;
   width: 100vw;
 }
 
-.words{
+.words {
   width: 65vw;
   display: block;
   box-sizing: border-box;
   word-break: break-all;
 }
 
-.contact{
+.contact {
   width: 90vw;
 }

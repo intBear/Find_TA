@@ -168,7 +168,7 @@ Page({
     }
   },
 
-  release: function(){
-    
+  release: function() {
+
   }
 })
