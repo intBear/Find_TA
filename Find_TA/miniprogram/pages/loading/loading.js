@@ -17,7 +17,7 @@ Page({
   onReady: function() {
     //自动跳转
     setTimeout(function() {
-      wx.redirectTo({
+      wx.reLaunch({
         url: '../tags/info/info'
       })
     }, 2000)
