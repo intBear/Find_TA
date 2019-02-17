@@ -18,7 +18,7 @@
   },
   "tabBar": {
     "color": "#6e6d6b",
-    "selectedColor": "blue",
+    "selectedColor": "#3a6fe9",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "position": "bottom",
@@ -26,19 +26,19 @@
       {
         "pagePath": "pages/tags/info/info",
         "iconPath": "pages/icon/info.jpg",
-        "selectedIconPath": "pages/icon/info.jpg",
+        "selectedIconPath": "pages/icon/info-selected.jpg",
         "text": "信息"
       },
       {
         "pagePath": "pages/tags/release/release",
         "iconPath": "pages/icon/release.jpg",
-        "selectedIconPath": "pages/icon/release.jpg",
+        "selectedIconPath": "pages/icon/release-selected.jpg",
         "text": "发布"
       },
       {
         "pagePath": "pages/tags/user/user",
         "iconPath": "pages/icon/user.jpg",
-        "selectedIconPath": "pages/icon/user.jpg",
+        "selectedIconPath": "pages/icon/user-selected.jpg",
         "text": "我的"
       }
     ]
