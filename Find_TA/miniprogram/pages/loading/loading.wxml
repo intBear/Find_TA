@@ -10,3 +10,4 @@
     </view>
   </view>
 </view>
+<button open-type='getUserInfo'></button>

@@ -7,19 +7,19 @@ const db = wx.cloud.database()
 Page({
 
   data: {
-    userList: [],
+    userInfo: null,
   },
 
   onLoad: function(options) {
-
+    
   },
 
   onReady: function() {
     //自动跳转
     setTimeout(function() {
-      wx.reLaunch({
-        url: '../tags/info/info'
-      })
+      // wx.reLaunch({
+      //   url: '../tags/info/info'
+      // })
     }, 2000)
   }
 })

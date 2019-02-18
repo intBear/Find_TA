@@ -1,0 +1,16 @@
+<view class="background" wx:if="{{canIUse}}">
+  <view class="imageview">
+    <image class="image" src=""></image>
+  </view>
+  <view class='text' style='color: #bbb'>
+    允许微信授权后，可体验更多功能</view>
+  <view class="btnview">
+    <button open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" class="btn" type="primary">授权登录</button>
+    <navigator open-type='exit' target="miniProgram">
+      <button bindtap='navigateBack' class="btn">退出当前小程序</button>
+    </navigator>
+  </view>
+</view>
+
+<view wx:else class='zan-font-16 zan-c-red' style='text-align:center;margin-top:50rpx'>
+  您的微信版本过低，请升级后再次体验</view>
