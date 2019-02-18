@@ -1,4 +1,4 @@
-<!--  startpage.wxml  -->
+<!--  loading.wxml  -->
 <view class='background'>
   <view class='element'>
     <view class='image'>
@@ -10,4 +10,3 @@
     </view>
   </view>
 </view>
-<button open-type='getUserInfo'></button>

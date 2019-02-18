@@ -1,13 +1,7 @@
-//startpage.js 
-
-const app = getApp()
-//声明数据库
-const db = wx.cloud.database()
-
+//loading.js 
 Page({
-
   data: {
-    userInfo: null,
+    
   },
 
   onLoad: function(options) {
@@ -17,9 +11,9 @@ Page({
   onReady: function() {
     //自动跳转
     setTimeout(function() {
-      // wx.reLaunch({
-      //   url: '../tags/info/info'
-      // })
+      wx.switchTab({
+        url: '../tags/info/info',
+      })
     }, 2000)
   }
 })
