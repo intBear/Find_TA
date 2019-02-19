@@ -1,31 +1,31 @@
 <view class="background">
   <view class="userinfo">
-    <image class="avatar" src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4"></image>
-    <text>12345</text>
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text>{{userInfo.nickName}}</text>
   </view>
   <view class="info">
     <view class="bar">
       <view class="instruction">姓名</view>
-      <input class="input" bindblur='name' placeholder='请输入姓名'></input>
+      <input class="input" bindblur='name' placeholder='请输入姓名' value="{{user.name}}"></input>
     </view>
     <view class="bar">
-      <view class="instruction">学校</view>
-      <input class="input" bindblur='school' placeholder='请输入学校'></input>
+      <view class="instruction">学校(全称)</view>
+      <input class="input" bindblur='school' placeholder='请输入学校' value='{{user.school}}'></input>
     </view>
     <view class="bar">
       <view class="instruction">校园卡号</view>
-      <input class="input" bindblur='card' placeholder='请输入校园卡号'></input>
+      <input class="input" bindblur='card' placeholder='请输入校园卡号' value="{{user.cardID}}"></input>
     </view>
     <view class="bar">
       <view class="instruction">QQ</view>
-      <input class="input" bindblur='qq' placeholder='请输入 QQ 号'></input>
+      <input class="input" bindblur='qq' placeholder='请输入 QQ 号' value='{{user.QQ}}'></input>
     </view>
     <view class="bar">
       <view class="instruction">手机</view>
-      <input class="input" bindblur='phone' placeholder='请输入手机号'></input>
+      <input class="input" bindblur='phone' placeholder='请输入手机号' value='{{user.phone}}'></input>
     </view>
   </view>
-  <view class="tip">Tip: QQ 或者 手机 二者至少填写一项作为联系方式。</view>
+  <view class="tip">Tip: 前三项为必填，QQ 或者 手机 二者至少填写一项作为联系方式。</view>
   <view class="save">
     <button class="btn" bindtap="save">保存</button>
   </view>

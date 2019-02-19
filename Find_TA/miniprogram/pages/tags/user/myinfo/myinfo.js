@@ -1,21 +1,43 @@
-Page({
+const db = wx.cloud.database()
+const users = db.collection("users")
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     name: null,
     school: null,
     card: null,
     qq: null,
     phone: null,
+    userInfo: null,
+    user: null,
+    _id: null,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
-
+    wx.getUserInfo({
+      success: res => {
+        this.setData({
+          userInfo: res.userInfo
+        })
+        users.where({
+          nickName: res.userInfo.nickName
+        }).get({
+          success: res => {
+            if (!Object.keys(res.data).length == 0) {
+              this.setData({
+                user: res.data[0],
+                name: res.data[0].name,
+                school: res.data[0].school,
+                card: res.data[0].cardID,
+                qq: res.data[0].QQ,
+                phone: res.data[0].phone,
+                _id: res.data[0]._id,
+              })
+            }
+          }
+        })
+      }
+    })
   },
 
   /**
@@ -98,9 +120,40 @@ Page({
   },
 
   save: function() {
-    if (this.data.qq != null || this.data.phone != null && this.data.name != null && this.data.school != null && this.data.card != null) {
-      wx.navigateBack({
-        delta: 1
+    if (this.data.user == null) {
+      if (this.data.qq != null || this.data.phone != null && this.data.name != null && this.data.school != null && this.data.card != null) {
+        users.add({
+          data: {
+            name: this.data.name,
+            school: this.data.school,
+            cardID: this.data.card,
+            QQ: this.data.qq,
+            phone: this.data.phone,
+            nickName: this.data.userInfo.nickName
+          }
+        }).then(res => {
+          wx.showToast({
+            title: '保存成功',
+          })
+          wx.navigateBack({
+            delta: 1
+          })
+        })
+      }
+    } else {
+      users.doc(this.data._id).set({
+        data: {
+          name: this.data.name,
+          school: this.data.school,
+          cardID: this.data.card,
+          QQ: this.data.qq,
+          phone: this.data.phone,
+          nickName: this.data.userInfo.nickName
+        }
+      }).then(res => {
+        wx.showToast({
+          title: '保存成功',
+        })
       })
     }
   }
