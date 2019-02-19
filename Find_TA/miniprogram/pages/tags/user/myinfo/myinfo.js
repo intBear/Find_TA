@@ -135,9 +135,11 @@ Page({
           wx.showToast({
             title: '保存成功',
           })
-          wx.navigateBack({
-            delta: 1
-          })
+          setTimeout(function(){
+            wx.switchTab({
+              url: '../../info/info',
+            })
+          },2000)
         })
       }
     } else {
