@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="background">
   <view class="userinfo">
-    <image class="avatar" src="https://avatars2.githubusercontent.com/u/45726087?s=40&v=4"></image>
-    <text>12345</text>
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text>{{userInfo.nickName}}</text>
   </view>
   <view class="box">
     <navigator url='./myrelease/myrelease'>

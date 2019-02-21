@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choice: "找失主",
+    choice: "寻主启事",
     plain: false,
     searchValue: ""
   },
@@ -67,14 +67,14 @@ Page({
   },
 
   choice: function() {
-    if (this.data.choice == "找失主") {
+    if (this.data.choice == "寻主启事") {
       this.setData({
-        choice: "找失物",
+        choice: "寻物启事",
         plain: true
       })
     } else {
       this.setData({
-        choice: "找失主",
+        choice: "寻主启事",
         plain: false
       })
     }
