@@ -11,6 +11,5 @@
     </navigator>
   </view>
 </view>
-
 <view wx:else class='zan-font-16 zan-c-red' style='text-align:center;margin-top:50rpx'>
   您的微信版本过低，请升级后再次体验</view>

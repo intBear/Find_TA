@@ -17,18 +17,18 @@ Page({
           nickName: this.data.userInfo.nickName
         }).get({
           success: res => {
-            if(Object.keys(res.data).length == 0){
+            if (Object.keys(res.data).length == 0) {
               wx.showToast({
                 title: '请先完善个人资料',
                 icon: "none"
               })
-              setTimeout(function(){
+              setTimeout(function() {
                 wx.redirectTo({
                   url: '../tags/user/myinfo/myinfo',
                 })
-              },2000)
-            }else{
-              setTimeout(function () {
+              }, 2000)
+            } else {
+              setTimeout(function() {
                 wx.switchTab({
                   url: '../tags/info/info',
                 })
