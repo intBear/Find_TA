@@ -1,8 +1,8 @@
 <!--pages/index/index.wxml-->
 <view class="background">
   <view class="box1">
-    <button class="choice" plain='{{!plain}}' bindtap="person">找失主</button>
-    <button class="choice" plain="{{plain}}" bindtap="thing">找失物</button>
+    <button class="choice" plain='{{!plain}}' bindtap="person">寻主启事</button>
+    <button class="choice" plain="{{plain}}" bindtap="thing">寻物启事</button>
   </view>
   <view class="title1">物品快速搜索标签</view>
   <radio-group class="box2" bindchange="radioChange">
@@ -21,9 +21,9 @@
     </view>
   </view>
   <view class="box3">
-    <image class="image image1" src='{{images[0].image1}}'></image>
-    <image class="image image2" src='{{images[1].image2}}'></image>
-    <image class="image image3" src='{{images[2].image3}}'></image>
+    <image class="image image1" src='{{image1}}'></image>
+    <image class="image image2" src='{{image2}}'></image>
+    <image class="image image3" src='{{image3}}'></image>
     <button class="add add1 hide{{showView[0]?'show':''}}" bindtap="add1">+</button>
     <button class="add add2 hide{{showView[1]?'show':''}}" bindtap="add2">+</button>
     <button class="add add3 hide{{showView[2]?'show':''}}" bindtap="add3">+</button>

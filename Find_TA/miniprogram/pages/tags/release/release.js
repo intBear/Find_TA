@@ -1,8 +1,8 @@
-Page({
+const db = wx.cloud.database()
+const releases = db.collection("releases")
+const users = db.collection("users")
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     plain: true,
     items: [{
@@ -31,27 +31,43 @@ Page({
         value: '其他'
       },
     ],
-    name: "",
-    detail: "",
-    height: '',
-    images: [{
-        image1: ''
-      },
-      {
-        image2: ''
-      },
-      {
-        image3: ''
-      },
-    ],
+    name: null,
+    detail: null,
+    height: null,
+    image1: null,
+    image2: null,
+    image3: null,
     showView: [true, false, false],
+    label: "校园卡",
+    type: null,
+    qq: null,
+    phone: null,
+    school: null,
+    card: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.getUserInfo({
+      success: res => {
+        users.where({
+          nickName: res.userInfo.nickName
+        }).get({
+          success: res => {
+            if (!Object.keys(res.data).length == 0) {
+              this.setData({
+                school: res.data[0].school,
+                card: res.data[0].cardID,
+                qq: res.data[0].QQ,
+                phone: res.data[0].phone,
+              })
+            }
+          }
+        })
+      }
+    })
   },
 
   /**
@@ -128,7 +144,9 @@ Page({
   },
 
   radioChange(e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      label: e.detail.value
+    })
   },
 
   name: function(e) {
@@ -145,30 +163,101 @@ Page({
   },
 
   add1: function() {
-    if (this.data.images[0].image1 != '') {
-      this.setData({
-        showView: [false, true, false]
-      })
-    }
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        this.setData({
+          image1: res.tempFilePaths
+        })
+        if (this.data.image1 != '') {
+          this.setData({
+            showView: [false, true, false]
+          })
+        }
+      }
+    })
   },
 
   add2: function() {
-    if (this.data.images[1].image2 != '') {
-      this.setData({
-        showView: [false, false, true]
-      })
-    }
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        this.setData({
+          image2: res.tempFilePaths
+        })
+        if (this.data.image2 != '') {
+          this.setData({
+            showView: [false, false, true]
+          })
+        }
+      }
+    })
   },
 
   add3: function() {
-    if (this.data.images[2].image != '') {
-      this.setData({
-        showView: [false, false, false]
-      })
-    }
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        this.setData({
+          image3: res.tempFilePaths
+        })
+        if (this.data.image3 != '') {
+          this.setData({
+            showView: [false, false, false]
+          })
+        }
+      }
+    })
   },
 
   release: function() {
-
+    if (this.data.plain) {
+      this.setData({
+        type: "寻物启事"
+      })
+    } else {
+      this.setData({
+        type: "寻主启事"
+      })
+    }
+    if (this.data.type != null && this.data.name != null && this.data.detail != null) {
+      releases.add({
+        data: {
+          type: this.data.type,
+          label: this.data.label,
+          name: this.data.name,
+          detail: this.data.detail,
+          images: {
+            image1: this.data.image1,
+            image2: this.data.image2,
+            image3: this.data.image3,
+          },
+          contact: {
+            QQ: this.data.qq,
+            phone: this.data.phone,
+          },
+          school: this.data.school,
+          cardID: this.data.card,
+        }
+      }).then(res => {
+        wx.showToast({
+          title: '发布成功',
+          duration: 1000,
+          success: function(res) {
+            setTimeout(function() {
+              wx.navigateTo({
+                url: '../user/myrelease/myrelease',
+              })
+            }, 1000)
+          }
+        })
+      })
+    }
   }
 })
