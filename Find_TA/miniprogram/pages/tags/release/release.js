@@ -169,13 +169,25 @@ Page({
       sourceType: ['album', 'camera'],
       success: res => {
         this.setData({
-          image1: res.tempFilePaths
+          image1: res.tempFilePaths[0]
         })
-        if (this.data.image1 != '') {
-          this.setData({
-            showView: [false, true, false]
-          })
-        }
+        wx.cloud.uploadFile({
+          cloudPath: 'find_ta/' + this.data.card + this.data.phone+ this.data.qq + Math.floor(Math.random() * 1000000).toString() +'.png',
+          filePath: this.data.image1,
+          success: res => {
+            this.setData({
+              image1: res.fileID
+            })
+            if (this.data.image1 != '') {
+              this.setData({
+                showView: [false, true, false]
+              })
+            }
+          },
+          fail: err => {
+            console.log(err)
+          }
+        })
       }
     })
   },
@@ -187,13 +199,25 @@ Page({
       sourceType: ['album', 'camera'],
       success: res => {
         this.setData({
-          image2: res.tempFilePaths
+          image2: res.tempFilePaths[0]
         })
-        if (this.data.image2 != '') {
-          this.setData({
-            showView: [false, false, true]
-          })
-        }
+        wx.cloud.uploadFile({
+          cloudPath: 'find_ta/' + this.data.card + this.data.phone + this.data.qq + Math.floor(Math.random() * 1000000).toString() + '.png',
+          filePath: this.data.image2,
+          success: res => {
+            this.setData({
+              image2: res.fileID
+            })
+            if (this.data.image2 != '') {
+              this.setData({
+                showView: [false, false, true]
+              })
+            }
+          },
+          fail: err => {
+            console.log(err)
+          }
+        })
       }
     })
   },
@@ -205,13 +229,25 @@ Page({
       sourceType: ['album', 'camera'],
       success: res => {
         this.setData({
-          image3: res.tempFilePaths
+          image3: res.tempFilePaths[0]
         })
-        if (this.data.image3 != '') {
-          this.setData({
-            showView: [false, false, false]
-          })
-        }
+        wx.cloud.uploadFile({
+          cloudPath: 'find_ta/' + this.data.card + this.data.phone + this.data.qq + Math.floor(Math.random() * 1000000).toString() + '.png',
+          filePath: this.data.image3,
+          success: res => {
+            this.setData({
+              image3: res.fileID
+            })
+            if (this.data.image3 != '') {
+              this.setData({
+                showView: [false, false, false]
+              })
+            }
+          },
+          fail: err => {
+            console.log(err)
+          }
+        })
       }
     })
   },
